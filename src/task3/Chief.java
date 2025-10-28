@@ -1,13 +1,13 @@
 package task3;
 
 // Класс повара (Consumer)
-class Chef implements Runnable {
+class Chief implements Runnable {
     private String name;
     private OrderQueue orderQueue;
     private int maxConcurrentDishes; // Максимум блюд одновременно
     private volatile boolean working = true; // Флаг работы
 
-    public Chef(String name, OrderQueue orderQueue, int maxConcurrentDishes) {
+    public Chief(String name, OrderQueue orderQueue, int maxConcurrentDishes) {
         this.name = name;
         this.orderQueue = orderQueue;
         this.maxConcurrentDishes = maxConcurrentDishes;

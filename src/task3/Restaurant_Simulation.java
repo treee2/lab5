@@ -2,7 +2,7 @@ package task3;
 
 
 // Главный класс
-public class RestaurantSimulation {
+public class Restaurant_Simulation {
     public static void main(String[] args) {
         System.out.println("=== ОТКРЫТИЕ РЕСТОРАНА ===\n");
 
@@ -32,10 +32,10 @@ public class RestaurantSimulation {
         // Создаем поваров (каждый может готовить 1 блюдо одновременно)
         int numChefs = 2;
         Thread[] chefThreads = new Thread[numChefs];
-        Chef[] chefs = new Chef[numChefs];
+        Chief[] chefs = new Chief[numChefs];
 
         for (int i = 0; i < numChefs; i++) {
-            chefs[i] = new Chef("Повар-" + (i + 1), orderQueue, 1);
+            chefs[i] = new Chief("Повар-" + (i + 1), orderQueue, 1);
             chefThreads[i] = new Thread(chefs[i]);
             chefThreads[i].start();
         }
@@ -52,7 +52,7 @@ public class RestaurantSimulation {
             Thread.sleep(5000);
 
             // Останавливаем поваров
-            for (Chef chef : chefs) {
+            for (Chief chef : chefs) {
                 chef.stopWorking();
             }
 
